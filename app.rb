@@ -8,7 +8,7 @@ class Contact < ActiveRecord::Base
 end
 
 get "/contacts" do
-  @contacts = Contact.count(5)
+  @contacts = Contact.limit(5)
   erb :index
 end
 
