@@ -8,7 +8,7 @@ class Contact < ActiveRecord::Base
 end
 
 get "/contacts" do
-  @contacts = Contact.where(:email => "rinkuamru123@gmail.com").order("lastname desc").limit(5)
+  @contacts = Contact.order("lastname desc").limit(5)
   erb :index
 end
 
