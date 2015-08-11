@@ -16,14 +16,4 @@ get "/" do
   erb :home
 end
 
-get "/create" do
-  CREATE_URL = 'https://connect.heroku.com/dashboard-next/create-connection'
-  match = /(.*?)\.herokuapp\.com/.match(request.host)
-  if match && match[1]
-    redirect to(CREATE_URL + "?create=" + match[1])
-  else
-    redirect to(CREATE_URL)
-  end
-end
-
 
