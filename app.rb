@@ -8,7 +8,8 @@ class Contact < ActiveRecord::Base
 end
 
 get "/contacts" do
-  @contacts = Contact.order("lastname desc").limit(5)
+  @contacts = Contact.all
+
   erb :index
 end
 
